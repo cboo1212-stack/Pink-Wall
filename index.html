@@ -66,4 +66,31 @@ $('donateBtn').onclick=()=>alert('Donation checkout is not connected yet. Before
 const sentinel=document.createElement('div');sentinel.id='wallSentinel';sentinel.style.cssText='height:1px;grid-column:1/-1';$('wallGrid').after(sentinel);
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting))renderMore();},{rootMargin:'500px'});observer.observe(sentinel);}
 render();
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://zllqjsvdkqolgzlzobzc.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_1rzsMM-OfNFWMKNAaEPkYQ_ynxkqwDp";
+
+  const pinkWallDB = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  async function testPinkWallConnection() {
+    const { data, error } = await pinkWallDB
+      .from("ribbons")
+      .select("id")
+      .limit(1);
+
+    if (error) {
+      console.error("Pink Wall connection error:", error.message);
+      return;
+    }
+
+    console.log("Pink Wall database connected!");
+  }
+
+  testPinkWallConnection();
+</script>
+
 </script></body></html>
