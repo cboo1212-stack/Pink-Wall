@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forever In Our Hearts — Pink Ribbon Memorial</title>
+<style>
+:root{--rose:#c83768;--deep:#8e2348;--paper:#fff8fa;--pink:#f8d5df;--wall:#e9a0b2}
+*{box-sizing:border-box}body{margin:0;color:#482432;background:var(--paper);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:18px clamp(16px,4vw,56px);background:#fff9fb;border-bottom:1px solid #f0d2dc;position:sticky;top:0;z-index:2}
+.brand{font-family:Georgia,serif;font-size:clamp(20px,3vw,30px);font-style:italic}.brand span{color:var(--rose);margin-right:8px}
+nav a{color:#713047;text-decoration:none;margin:0 10px;font-size:14px}.btn{border:0;border-radius:999px;padding:12px 18px;background:var(--rose);color:white;font-weight:700;cursor:pointer}.btn:hover{background:var(--deep)}
+.hero{text-align:center;padding:42px 16px 24px;background:linear-gradient(#fff3f6,#f9dce5)}h1{font:italic clamp(32px,5vw,56px) Georgia,serif;color:#9c3155;margin:0 0 10px}.subtitle{max-width:660px;margin:auto;line-height:1.65;color:#744858}
+main{max-width:1320px;margin:28px auto;padding:0 18px;display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:start}
+.panel{background:white;border:1px solid #f0d1dc;border-radius:18px;padding:22px;box-shadow:0 8px 28px #8c29400d}.panel h2{font:italic 28px Georgia,serif;margin:0 0 8px}.muted{font-size:14px;color:#795967;line-height:1.55}
+label{display:block;font-weight:650;font-size:13px;margin:15px 0 6px}input[type=text],textarea{width:100%;border:1px solid #e5c8d1;border-radius:10px;padding:12px;font:inherit;background:#fffafd}textarea{resize:vertical;min-height:90px}
+input[type=file]{width:100%;font-size:12px} .note{font-size:11px;color:#8d6a77;line-height:1.45;margin-top:8px}
+.wall-wrap{border-radius:18px;overflow:hidden;border:1px solid #dc91a7;box-shadow:0 12px 34px #762a4217;background:#e8a0b1}
+.wall-head{text-align:center;padding:28px 12px 18px;background:#f4c1cf}.wall-head h2{font:italic clamp(27px,4vw,42px) Georgia,serif;color:#8e294d;margin:0}.wall-head p{margin:7px 0 0;color:#743a50}
+.wall{padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:25px 15px;min-height:430px;background-image:radial-gradient(#ffffff36 1px,transparent 1px),linear-gradient(130deg,#e8a1b2,#f0b7c5 50%,#df8fa5);background-size:10px 10px,cover}
+.ribbon-card{min-width:0;text-align:center;position:relative;cursor:pointer;transition:transform .18s}.ribbon-card:hover{transform:translateY(-3px)}
+.ribbon{position:relative;margin:0 auto;width:62px;height:94px;filter:drop-shadow(0 5px 3px #9a375344)}
+.loop{position:absolute;top:0;left:12px;width:38px;height:43px;border:10px solid var(--ribbon,#d83970);border-radius:60% 60% 8% 8%;transform:rotate(25deg);border-bottom-color:transparent}
+.loop:after{content:"";position:absolute;width:38px;height:43px;border:10px solid var(--ribbon,#d83970);border-radius:60% 60% 8% 8%;transform:rotate(-50deg);left:-10px;top:-10px;border-bottom-color:transparent;opacity:.9}
+.tail{position:absolute;top:37px;left:10px;width:42px;height:55px;background:linear-gradient(90deg,#ffffff22,var(--ribbon,#d83970),#ffffff28);clip-path:polygon(0 0,100% 0,85% 100%,50% 78%,15% 100%);z-index:0}
+.tag{position:relative;margin:-15px auto 0;padding:13px 5px 8px;background:#fff0f4;border:1px solid #ffffffa8;border-radius:8px;max-width:145px;min-height:56px;box-shadow:0 4px 10px #8a2a421e;z-index:1}
+.avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin:-9px auto 3px;display:block;position:relative;z-index:2;background:#f8d6e0}
+.person{font:italic 16px Georgia,serif;overflow-wrap:anywhere}.message{font-size:11px;line-height:1.35;margin-top:4px;overflow-wrap:anywhere}.heart{color:#a42c55;margin-top:3px}
+.wall-footer{text-align:center;padding:17px;background:#f1b5c5;color:#77334c;font:italic 16px Georgia,serif}.count{font-size:13px;color:#754355;margin:14px 2px 0}
+.donate{margin:0 auto 34px;max-width:1320px;padding:0 18px}.donate-inner{padding:22px;border:1px solid #efced9;border-radius:16px;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:18px}.donate h3{margin:0 0 5px;font:italic 24px Georgia,serif}.donate p{margin:0;color:#795967;font-size:14px;line-height:1.5}.footer{text-align:center;padding:24px;color:#8c6875;font-size:12px}
+.modal-back{position:fixed;inset:0;background:#3c1527a8;display:none;place-items:center;padding:20px;z-index:5}.modal{background:white;border-radius:18px;padding:24px;max-width:440px;width:100%;max-height:85vh;overflow:auto}.modal h3{font:italic 27px Georgia,serif;margin-top:0}.modal img{max-width:100%;max-height:260px;display:block;margin:auto;border-radius:12px}.close{float:right;border:0;background:#f9e4eb;border-radius:50%;width:32px;height:32px;cursor:pointer}
+@media(max-width:850px){main{grid-template-columns:1fr}.panel{order:1}.wall-wrap{order:0}.wall{padding:16px;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:18px 9px}.donate-inner{align-items:flex-start;flex-direction:column}nav{display:none}}
+</style></head>
+<body>
+<header><div class="brand"><span>🎗</span>Forever In Our Hearts</div><nav><a href="#home">Home</a><a href="#wall">The Wall</a><a href="#about">Our Purpose</a></nav><a class="btn" href="#add" style="text-decoration:none">♡ Add a Ribbon</a></header>
+<section class="hero" id="home"><h1>Every Name Matters</h1><p class="subtitle">A wall of love, remembrance, and hope. Honor someone touched by breast cancer — a loved one, a survivor, a fighter, or someone forever in your heart.</p></section>
+<main>
+<aside class="panel" id="add"><h2>Add a Ribbon</h2><p class="muted">Create a tribute for someone special. Every name carries a story.</p>
+<form id="tributeForm"><label for="name">Their name *</label><input id="name" type="text" maxlength="50" placeholder="Enter their name" required>
+<label for="photo">Photo (optional)</label><input id="photo" type="file" accept="image/png,image/jpeg,image/webp">
+<div class="note">Please only upload a photo you have permission to share. This demo keeps tributes in this browser only.</div>
+<label for="message">Message or memory (optional)</label><textarea id="message" maxlength="180" placeholder="Forever in my heart..."></textarea>
+<label for="color">Ribbon color</label><div style="display:flex;gap:10px;align-items:center"><button type="button" class="swatch" data-color="#d83970" aria-label="Pink ribbon" style="background:#d83970"></button><button type="button" class="swatch" data-color="#e77d9f" aria-label="Light pink ribbon" style="background:#e77d9f"></button><button type="button" class="swatch" data-color="#b76a9b" aria-label="Purple ribbon" style="background:#b76a9b"></button><button type="button" class="swatch" data-color="#ffffff" aria-label="White ribbon" style="background:#fff;border:1px solid #d5bdc6"></button></div>
+<p class="muted" style="margin-top:17px">Placing a ribbon is free. If you choose, you can support breast cancer organizations through a donation.</p>
+<button class="btn" type="submit" style="width:100%;margin-top:8px">🎗 Place My Ribbon</button><p id="status" class="muted" role="status"></p></form>
+</aside>
+<section id="wall"><div class="wall-wrap"><div class="wall-head"><h2>The Pink Ribbon Wall</h2><p>Remembering with love. Standing together with hope.</p></div><div class="wall" id="wallGrid" aria-live="polite"></div><div class="wall-footer">Different journeys. One community. Endless love. ♥</div></div><div class="count" id="count">0 tributes on this wall</div></section>
+</main>
+<section class="donate" id="about"><div class="donate-inner"><div><h3>Turn remembrance into hope</h3><p>Donations can help support breast cancer research, education, and patient support.<br><strong>Donation link coming soon.</strong> This demo does not collect money or represent a charity.</p></div><button class="btn" id="donateBtn" type="button">Support the Cause</button></div></section>
+<footer class="footer">Made with love, for every person and every family touched by breast cancer. ♥</footer>
+<div class="modal-back" id="modal"><div class="modal"><button class="close" id="closeModal" aria-label="Close">×</button><div id="modalContent"></div></div></div>
+<script>
+const STORAGE='foreverInOurHeartsTributes_v1';let selectedColor='#d83970';let photoData='';
+const $=id=>document.getElementById(id);
+document.querySelectorAll('.swatch').forEach(b=>{b.style.width='30px';b.style.height='30px';b.style.borderRadius='50%';b.style.cursor='pointer';b.style.border='2px solid white';b.style.boxShadow='0 0 0 1px #dfbdca';b.onclick=()=>{selectedColor=b.dataset.color;document.querySelectorAll('.swatch').forEach(s=>s.style.outline='none');b.style.outline='3px solid #b92d60';};});
+$('photo').addEventListener('change',e=>{const f=e.target.files[0];photoData='';if(!f)return;if(f.size>2*1024*1024){$('status').textContent='Please choose a photo under 2 MB.';e.target.value='';return;}const r=new FileReader();r.onload=()=>photoData=r.result;r.readAsDataURL(f);});
+function getTributes(){try{return JSON.parse(localStorage.getItem(STORAGE)||'[]')}catch{return []}}
+function saveTributes(items){try{localStorage.setItem(STORAGE,JSON.stringify(items));return true}catch{return false}}
+let renderOffset=0;const BATCH_SIZE=24;let wallSentinel;
+function renderCards(items, start, end){const grid=$('wallGrid');items.slice(start,end).forEach(item=>{const card=document.createElement('button');card.type='button';card.className='ribbon-card';card.style.background='transparent';card.style.border='0';card.style.padding='0';card.style.color='#482432';card.setAttribute('aria-label','View tribute for '+item.name);card.innerHTML=`<div class="ribbon" style="--ribbon:${item.color}"><div class="loop"></div><div class="tail"></div></div><div class="tag">${item.photo?`<img class="avatar" src="${item.photo}" alt="">`:''}<div class="person"></div><div class="message"></div><div class="heart">♥</div></div>`;card.querySelector('.person').textContent=item.name;card.querySelector('.message').textContent=item.message||'Forever remembered';card.onclick=()=>showTribute(item);grid.appendChild(card)});}
+function render(){const grid=$('wallGrid');grid.innerHTML='';renderOffset=0;const items=getTributes().reverse();if(!items.length){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;color:#793b50;align-self:center;padding:40px 10px"><div style="font-size:42px">🎗</div><strong>Be the first to add a tribute</strong><p style="font-size:13px">Place a ribbon for someone who matters to you.</p></div>'}else{renderMore();} $('count').textContent=items.length+' '+(items.length===1?'tribute':'tributes')+' on this wall';}
+function renderMore(){const items=getTributes().reverse();if(renderOffset>=items.length)return;const next=Math.min(renderOffset+BATCH_SIZE,items.length);renderCards(items,renderOffset,next);renderOffset=next;}
+function showTribute(item){const c=$('modalContent');c.innerHTML='';const h=document.createElement('h3');h.textContent=item.name+' — Forever in our hearts';c.appendChild(h);if(item.photo){const img=document.createElement('img');img.src=item.photo;img.alt='Photo shared for '+item.name;c.appendChild(img)}const p=document.createElement('p');p.style.lineHeight='1.6';p.textContent=item.message||'Remembered with love.';c.appendChild(p);const small=document.createElement('p');small.className='muted';small.textContent='A tribute on the pink ribbon wall.';c.appendChild(small);$('modal').style.display='grid'}
+$('closeModal').onclick=()=>$('modal').style.display='none';$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').style.display='none'};
+$('tributeForm').addEventListener('submit',e=>{e.preventDefault();const name=$('name').value.trim();if(!name){$('status').textContent='Please enter their name.';return}const items=getTributes();items.push({id:Date.now(),name,message:$('message').value.trim(),color:selectedColor,photo:photoData});if(!saveTributes(items)){$('status').textContent='Could not save this tribute. Try a smaller photo or remove older tributes.';return}$('status').textContent='Your tribute has been added to this browser’s wall. ♥';$('tributeForm').reset();photoData='';selectedColor='#d83970';render();});
+$('donateBtn').onclick=()=>alert('Donation checkout is not connected yet. Before launch, choose a verified breast cancer charity or decide how donations will be handled.');
+const sentinel=document.createElement('div');sentinel.id='wallSentinel';sentinel.style.cssText='height:1px;grid-column:1/-1';$('wallGrid').after(sentinel);
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting))renderMore();},{rootMargin:'500px'});observer.observe(sentinel);}
+render();
+</script></body></html>
